@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: $font-open-sans;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3{
+    font-family: $font-playfair;
+}
+
+button, .cta{
+    font-family: $font-poppins;
+    font-weight: 700;
+}

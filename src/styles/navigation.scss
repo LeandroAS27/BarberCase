@@ -1,0 +1,180 @@
+@import './variables.scss';
+
+.container-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    h1{
+        font-size: 1.8rem;
+        color: $text-color;
+        font-weight: bold;
+    }
+}
+
+.container-nav{
+    ul{
+        display: flex;
+        gap: 1.5rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li{
+            font-size: 1rem;
+            color: $text-color;
+            cursor: pointer;
+            transition: color 0.3s;
+
+            &:hover{
+                color: $icons-color;
+            }
+        }
+    }
+    button{
+        background: transparent;
+        border: none;
+    }
+
+    .menu-toggle{
+        display: none;
+
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+
+        .bar{
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+        }
+    }
+}
+
+.button-cta{
+    background-color: $primary-color;
+    color: $text-color;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover{
+        background-color: $hover-color;
+    }
+}
+
+.container-section{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+   background-image: url('../../public/barbearia\ wallpaper.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+
+   &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+   }
+
+   .container-overlay{
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $text-color;
+        
+        h1{
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h2{
+            color: $primary-color;
+        }
+
+        a{
+            text-decoration: none;
+            margin: 1rem 0;
+
+            &:hover{
+                background-color: $hover-color;
+            }
+        }
+   }
+}
+
+
+//responsividade
+@media screen and (max-width: 768px){
+    .container-nav{
+        margin: 0 1rem;
+
+        ul{
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+        }
+        
+        li{
+            font-size: 1.2rem;
+            color: $text-color;
+        }
+
+        &.open{
+            display: flex;
+        }
+
+        &.open ul{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+        }
+
+        .menu-toggle{
+            display: flex;
+        }
+    }
+
+    .container-header{
+        position: absolute;
+    }
+}
+
+
+.container-overlay{
+    h1{
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+}
