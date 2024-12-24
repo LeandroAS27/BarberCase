@@ -1,7 +1,121 @@
 @import './variables.scss';
+@import './main.scss';
 
 .container-section-units{
     width: 100%;
-    height: 100vh;
-    background-color: $background-color;
+    min-height: 100vh;
+    background-color: #001722;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .units-text h1{
+        margin: 1.5rem;
+        font-size: 2rem;
+        color: #fff;
+    }
+}
+
+.units-carousel{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    max-width: 1200px;
+    justify-items: center;
+
+    .carousel-item{
+        flex: 0 0 auto;
+        width: 300px;
+        scroll-snap-align: center;
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .units-image{
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .unit-description{
+        margin: 0.5rem;
+        font-size: 1rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    .unit-address{
+        margin-top: 0.5rem;
+        font-size: .95rem;
+        color: #fff;
+
+        .icon{
+            color: $icons-color;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .unit-telephone{
+        margin-top: 0.5rem;
+        font-size: .95rem;
+        color: #fff;
+
+        .icon{
+            color: $icons-color;
+            margin-right: 0.5rem;
+        }
+    }
+
+    .unit-openingHours{
+        margin-top: 0.5rem;
+        font-size: .95rem;
+        color: #fff;
+
+        .icon{
+            color: $icons-color;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+
+//responsividade
+@media screen and (max-width: 768px){
+    .units-text h1{
+        font-size: 1.5rem;
+    }
+
+    .units-carousel{
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+
+        .carousel-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .unit-openingHours{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon{
+                    width: 32px;
+                }
+            }
+        }
+    }
+
+    .units-image{
+        max-width: 240px;
+        height: 160px;
+    }
 }
