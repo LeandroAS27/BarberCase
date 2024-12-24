@@ -91,7 +91,7 @@ const Navigation = () => {
                         <motion.li 
                         variants={itemVariants}
                         >
-                            <Link to="servicos" smooth={true} duration={500}>
+                            <Link to="unidades" smooth={true} duration={500}>
                                 Unidades
                             </Link>
                         </motion.li>
@@ -105,21 +105,31 @@ const Navigation = () => {
                         <motion.li 
                         variants={itemVariants}
                         >
-                            <Link to="servicos" smooth={true} duration={500}>
+                            <Link to="sobre" smooth={true} duration={500}>
                                 Sobre
                             </Link>
                         </motion.li>
                         <motion.li 
                         variants={itemVariants}
                         >
-                            <Link to="servicos" smooth={true} duration={500}>
+                            <Link to="contato" smooth={true} duration={500}>
                                 Contato
                             </Link>
                         </motion.li>
                     </motion.ul>
                 </motion.nav>
 
-                <button className="button-cta">Agendar</button>
+                <motion.a href="https://wa.me/"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    aria-label="Acessar o Whatsapp" 
+                    whileHover={{scale: 1.1}}
+                    transition={{duration: 0.3}}
+                    whileTap={{scale: 0.8}}
+                    className="button-cta"
+                >
+                    Agendar
+                </motion.a>
             </header>
 
             <main>
