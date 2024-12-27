@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+.container-section-about{
+    width: 100%;
+    min-height: 100vh;
+    background-color: $third-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    .about-title{
+        margin: 1rem 0;
+        color: $text-color;
+        font-size: 2rem;
+    }
+
+    .about-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        max-width: 70%;
+        gap: 1rem;
+
+        .about-description{
+            color: $text-color;
+
+            h1{
+                color: $icons-color;
+                position: relative;
+                margin: 1rem 0;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    width: 30%;
+                    border-bottom: 1px solid $secondary-text;
+                }
+            }
+
+            p{
+                color: $text-color;
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
