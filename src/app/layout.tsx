@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "../styles/variables.scss"
 import { Playfair_Display, Open_Sans, Poppins } from 'next/font/google';
+import Head from "next/head";
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -31,6 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <Head>
+        <link rel="icon" href="/favicon.ico" type="image/png" />
+      </Head>
       <body className={`${playfair.className} ${openSans.className} ${poppins.className}`}>
         {children}
       </body>
