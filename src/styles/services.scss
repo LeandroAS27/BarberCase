@@ -2,7 +2,45 @@
 
 .container-section-services{
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
     background-color: #ccc;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+
+    .services-title{
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+
+    .services-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid $icons-color;
+    }
+
+    .services-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        border: 1px solid $icons-color;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .services-item:nth-child(3n){
+        border-right: 1px solid $icons-color;
+    }
+
+    .services-item:nth-last-child(-n+3){
+        border-bottom: 1px solid $icons-color;
+    }
 }
+
