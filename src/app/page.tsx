@@ -3,6 +3,7 @@ import Navigation from "./components/navigation";
 import Services from './components/services';
 import Units from './components/units';
 import About from './components/about';
+import Contact from './components/contact';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Units/>
         <Services/>
         <About/>
+        <Contact/>
       </main>
 
       <footer>
