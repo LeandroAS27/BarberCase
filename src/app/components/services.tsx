@@ -1,5 +1,8 @@
-//images
+
+//sass
 import '../../styles/services.scss';
+
+//images
 import Image from 'next/image';
 import scissors from '../../../public/icons8-tesoura-de-barbeiro-96.png';
 import beard from '../../../public/icons8-barba-curta-96.png';

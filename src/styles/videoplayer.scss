@@ -26,3 +26,9 @@
         z-index: 2;
     }
 }
+
+@media screen and (max-width: 768px){
+    .video-container{
+        padding-top: 75%;
+    }
+}
