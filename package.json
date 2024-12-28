@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "firebase": "^11.1.0",
     "locomotive-scroll": "^4.1.4",
     "motion": "^11.15.0",
