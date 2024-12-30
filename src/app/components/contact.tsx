@@ -1,9 +1,17 @@
-"use client"
+"use client";
 
+//estilo
 import '../../styles/contact.scss';
-import { useForm, SubmitHandler } from "react-hook-form";
+
+//firebase
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../config/firebase";
+import { db, auth } from "../../config/firebase";
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+
+//react
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 //images
 import Image from 'next/image';
@@ -17,9 +25,27 @@ interface ContactFormInputs {
 
 
 const Contact = () => {
+    const [user, setUser] = useState<null | { email: string }>(null);
     const { register, handleSubmit, reset, formState: { errors }} = useForm<ContactFormInputs>();
+    const router = useRouter();
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            if(currentUser){
+                setUser({ email: currentUser.email!});
+            }else{
+                setUser(null);
+            }
+        });
+        return () => unsubscribe();
+    }, []);
 
     const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
+        if(!user){
+            alert("Você precisa estar logado para enviar uma mensagem.")
+            router.push("/auth/login");
+            return;
+        }
         try {
             await addDoc(collection(db, "contacts"), data);
             alert("Mensagem Enviada com sucesso!");
@@ -28,6 +54,15 @@ const Contact = () => {
             console.error("Erro ao enviar a mensagem: ", error)
         }
     };
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            router.push("/auth/login")
+        } catch (error) {
+            console.error("Erro ao deslogar.", error)
+        }
+    }
 
     return(
         <>
@@ -71,6 +106,10 @@ const Contact = () => {
                             {errors.message && <p className='error'>{errors.message.message}</p>}
                             
                             <button type='submit'>Enviar Mensagem</button>
+
+                            {user && (
+                                <button onClick={handleLogout} style={{ marginLeft: "1rem" }}>Sair</button>
+                            )}
                         </form>
                     </div>
                     

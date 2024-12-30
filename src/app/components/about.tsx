@@ -1,5 +1,7 @@
 "use client"
 import dynamic from 'next/dynamic';
+
+//estilo
 import '../../styles/about.scss'
  
 const VideoPlayer = dynamic(() => import('./VideoPlayer'), {
