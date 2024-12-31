@@ -1,0 +1,23 @@
+@import './variables.scss';
+
+.whatsapp-button{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $whatsapp-green;
+    color: #fff;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    transition: transform 0.3s ease, border 0.3s ease;
+    box-shadow: 0 0 12px 5px rgba(65,105,225,0.5);
+    z-index: 2;
+
+    &:hover{
+        transform: scale(1.25);
+        border: 2px solid $hover-border-color;
+    }
+}
