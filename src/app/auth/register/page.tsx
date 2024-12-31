@@ -27,7 +27,7 @@ const Register = () => {
         try {
             await createUserWithEmailAndPassword(auth, email, password);
             router.push("/auth/login");
-        } catch (error) {
+        } catch {
             setError("Erro ao criar conta. Tente novamente.");
         }
     }

@@ -25,7 +25,7 @@ const Login = () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             router.push("/");
-        } catch (error) {
+        } catch {
             setError("Erro ao fazer login. Verifique suas credenciais.");
         }
     }
