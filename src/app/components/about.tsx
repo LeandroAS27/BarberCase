@@ -8,7 +8,7 @@ const VideoPlayer = dynamic(() => import('./VideoPlayer'), {
     ssr:false,
 })
 
-const About = () => {
+const About: React.FC = () => {
     return(
         <>
             <section id="sobre" className="container-section-about">
@@ -24,7 +24,7 @@ const About = () => {
 
                     <div>
                         <div className='about-video'>
-                            <VideoPlayer/>
+                            <VideoPlayer videoUrl='https://www.youtube.com/watch?v=N20q-391r48'/>
                         </div>
                     </div>
                 </div>
