@@ -124,6 +124,7 @@
 
         h2{
             color: $primary-color;
+            font-size: 1.5rem;
         }
 
         a{
@@ -181,16 +182,15 @@
         }
     }
 
-
-}
-
-
-.container-overlay{
-    h1{
-        font-size: 2rem;
-    }
-
-    h2{
-        font-size: 1.5rem;
+    .container-section{
+       .container-overlay{
+            h1{
+                font-size: 2rem;
+            }
+            h2{
+                font-size: 1.5rem;
+            }
+       }
     }
 }
+
