@@ -49,3 +49,10 @@
     }
 }
 
+
+//responsividade
+@media screen and (max-width: 768px){
+    .container-section-about .about-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

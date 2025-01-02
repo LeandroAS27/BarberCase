@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #ccc;
     justify-content: center;
     align-items: center;
@@ -44,3 +44,16 @@
     }
 }
 
+//responsividade
+@media screen and (max-width: 768px) {
+    .container-section-services .services-grid {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+    .services-item {
+        border-right: none; 
+        border-bottom: 1px solid $icons-color; 
+    }
+    .services-item:last-child {
+        border-bottom: none; 
+    }
+}
