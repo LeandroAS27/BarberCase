@@ -84,35 +84,65 @@ const Navigation = () => {
                         style={{pointerEvents: isOpen ? "auto" : "none"}}
                     >
                         <motion.li variants={itemVariants}>
-                            <Link to="home" smooth={true} duration={500}>
+                            <Link 
+                            to="home" 
+                            smooth={true} 
+                            duration={500} 
+                            href='#home' 
+                            className='navigation-link'
+                            aria-label='Ir para a seção home'>
                                 Home
                             </Link>
                         </motion.li>
                         <motion.li 
                         variants={itemVariants}
                         >
-                            <Link to="unidades" smooth={true} duration={500}>
+                            <Link 
+                            to="unidades" 
+                            smooth={true} 
+                            duration={500}
+                            href='#unidades' 
+                            className='navigation-link'
+                            aria-label='Ir para a seção unidades'>
                                 Unidades
                             </Link>
                         </motion.li>
                         <motion.li 
                         variants={itemVariants}
                         >
-                            <Link to="servicos" smooth={true} duration={500}>
+                            <Link 
+                            to="servicos" 
+                            smooth={true} 
+                            duration={500}
+                            href='#servicos' 
+                            className='navigation-link'
+                            aria-label='Ir para a seção serviços'>
                                 Serviços
                             </Link>
                         </motion.li>
                         <motion.li 
                         variants={itemVariants}
                         >
-                            <Link to="sobre" smooth={true} duration={500}>
+                            <Link 
+                            to="sobre" 
+                            smooth={true} 
+                            duration={500}
+                            href='#sobre' 
+                            className='navigation-link'
+                            aria-label='Ir para a seção sobre'>
                                 Sobre
                             </Link>
                         </motion.li>
                         <motion.li 
                         variants={itemVariants}
                         >
-                            <Link to="contato" smooth={true} duration={500}>
+                            <Link 
+                            to="contato" 
+                            smooth={true} 
+                            duration={500}
+                            href='#contato' 
+                            className='navigation-link'
+                            aria-label='Ir para a seção contato'>
                                 Contato
                             </Link>
                         </motion.li>
